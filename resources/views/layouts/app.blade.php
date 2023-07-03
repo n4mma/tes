@@ -35,6 +35,12 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                    @can('isResto')
+<li class="nav-item"><a class="nav-link"
+href="{{ url('/resto/pizza') }}">Pizza</a></li>
+<li class="nav-item"><a class="nav-link"
+href="{{ url('/resto/user') }}">User</a></li>
+@endcan
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -92,3 +98,6 @@
     </div>
 </body>
 </html>
+<link href="{{ asset('css/pizza.css') }}" rel="stylesheet">
+</head> 
+

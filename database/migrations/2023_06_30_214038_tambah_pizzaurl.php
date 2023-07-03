@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('alamat_kirims', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->integer('konsumen_id');
-            $table->string('nama_penerima');
-            $table->string('alamat');
-            $table->boolean('is_default');
-           });
+        //
+        {
+            Schema::table('pizzas', function(Blueprint $table){
+            $table->string('pizza_url')->default('');
+            });
+        }
     }
 
     /**
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alamat_kirims');
+        //
     }
 };
